@@ -36,6 +36,11 @@ public class MyCurlController {
                 sendPostRequestAndPrintResponse(uri.getHost(), uri.getPort(), uri.getPath(), data, contentType);
             } else if (method.equalsIgnoreCase("GET")) {
                 sendGetRequestAndPrintResponse(uri.getHost(), uri.getPort(), uri.getPath());
+            } else if (method.equalsIgnoreCase("DELETE")) {
+                sendDeleteRequestAndPrintResponse(uri.getHost(), uri.getPort(), uri.getPath());
+            } else {
+                return "Invalid Method!";
+
             }
 
             String protocol = uri.getScheme();
